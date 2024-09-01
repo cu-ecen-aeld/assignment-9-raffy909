@@ -1,0 +1,6 @@
+
+config BR2_PACKAGE_LDD
+	bool "aesd-ldd"
+	help
+	  Linux device driver package required for assignment 7
+	  Used to understand buildroot external trees, package builds, rootfs overlay and handling custom kernel drivers.

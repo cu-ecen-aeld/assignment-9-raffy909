@@ -1,0 +1,38 @@
+#!/bin/sh
+
+KERNEL=$(uname -r)
+MODULE_PATH="/lib64/modules/$KERNEL/extra/"
+
+do_start() {
+    cd $MODULE_PATH
+    modprobe hello
+    /usr/bin/scull_load
+    /usr/bin/module_load faulty
+}
+
+do_stop() {
+    cd $MODULE_PATH
+    rmmod hello
+    /usr/bin/scull_unload
+    /usr/bin/module_unload faulty
+}
+
+case "$1" in
+  start)
+    echo -n "Loading drivers..."
+    do_start
+    echo "."
+    ;;
+  stop)
+	echo -n "Unloading drivers..."
+    do_stop
+    echo "."
+    ;;
+  status)
+    echo "Not implemented"
+    ;;
+  *)
+	echo "Usage: $SCRIPTNAME {start|stop|status}" >&2
+	exit 3
+	;;
+esac
