@@ -5,7 +5,7 @@
 #
 ##############################################################
 
-AESD_CHAR_DRIVER_VERSION = '53af34f56a2f23ab49bdb03102ed57c331b5ea21'
+AESD_CHAR_DRIVER_VERSION = 'f78aa96723ab6d0ed9f43c1eac60705c37a14255'
 
 AESD_CHAR_DRIVER_SITE = 'git@github.com:cu-ecen-aeld/assignments-3-and-later-raffy909.git'
 AESD_CHAR_DRIVER_SITE_METHOD = git
